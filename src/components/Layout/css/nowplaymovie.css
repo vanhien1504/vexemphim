@@ -1,0 +1,5 @@
+.movie-image {
+    width: 100%;
+    height: 200px; /* Điều chỉnh kích thước tùy ý */
+    object-fit: cover;
+  }

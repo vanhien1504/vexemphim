@@ -1,0 +1,53 @@
+.image-with-button {
+    position: relative;
+  }
+  
+  .button-overlay {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-100%, -80%);
+    text-align: center;
+  }
+  
+  .button-overlay button {
+    margin: 5px;
+  }
+  .image-with-button {
+    position: relative;
+  }
+  
+  .button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .play-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .play-button i {
+    font-size: 24px;
+  }
+  
+  .carousel-item {
+    position: relative;
+  }
+  
+  .carousel-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }

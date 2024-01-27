@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/Layout/Trangchu/Header'
 
 const Detailrap = () => {
  return (
@@ -36,21 +37,7 @@ const Detailrap = () => {
                     – Suất chiếu đặc biệt áp dụng giá vé theo khung giờ của ngày. Không áp dụng các giá vé ưu đãi dành cho U22, Privilege Voucher/Staff Voucher, Happy Day. Trong trường hợp Suất chiếu đặc biệt cùng ngày với Happy Day sẽ áp dụng giá vé của Thứ 3
                     </p>
                 </div>
-                <div className="social flex">
-                    <button to="https://www.facebook.com" target="_blank">
-                        <i className="fab fa-facebook"></i>
-                    </button>
-                    <button to="https://www.instagram.com" target="_blank">
-                        <i className="fab fa-instagram"></i>
-                    </button>
-                    <button to="https://www.twitter.com" target="_blank">
-                        <i className="fab fa-twitter"></i>
-                    </button>
-                    <button to="https://www.youtube.com" target="_blank">
-                        <i className="fab fa-youtube"></i>
-                    </button>
-                </div>
-
+                
             </div>
             <div className="content-right  border-2 border-stone-50 rounded col-3 mx-4 mb-[135%]">
                    <aside classname="widget mt-list-widget border-stone-50">

@@ -5,7 +5,7 @@ const Listcinema = () => {
     return (
         <div className="bg-neutral-600">
         <div className="container mx-auto row row-small">
-            <h2 className=" text-center font-bold text-stone-50 py-4" center>Hệ Thống Rạp</h2>
+            <h2 className=" text-center font-bold text-stone-50 py-4" center>Lịch Chiếu </h2>
             <div className="d-flex grid grid-cols-2 sm:grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-4 px-0 py-4">
                 <div className="bg-gray rounded shadow ">
                 <img

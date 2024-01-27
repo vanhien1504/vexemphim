@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Footer = () => {
     return (
-        <Container className="mt-16 flex flex-col">
+        <Container className="mt-16 flex flex-col bg-gray">
             <img
                 className="w-full"
                 src="https://cinestar.com.vn/catalog/view/theme/default/images/line-bg.png"
@@ -25,7 +25,7 @@ export const Footer = () => {
                     </NavLink>
                 </div>
                 <div className="mt-8 flex gap-16 info">
-                    <div>
+                    <div className="sm:w-1/2 md:w-1/4">
                         <p className="font-bold text-2xl">
                             <span className="text-primary">My</span>
                             MOVIE
@@ -35,7 +35,7 @@ export const Footer = () => {
                         <NavLink to="">Lịch chiếu</NavLink>
                         <NavLink to="">Khuyến mãi</NavLink>
                     </div>
-                    <div>
+                    <div className="sm:w-1/2 md:w-1/4">
                         <p className="font-bold text-2xl">
                             <span>THÔNG TIN</span>
                         </p>
@@ -44,7 +44,7 @@ export const Footer = () => {
                         <NavLink to="">Hỏi đáp</NavLink>
                         <NavLink to="">Liên hệ</NavLink>
                     </div>
-                    <div>
+                    <div className="sm:w-1/2 md:w-1/4">
                         <p className="font-bold text-2xl">
                             <span>CHÍNH SÁCH VÀ QUY ĐỊNH</span>
                         </p>
@@ -53,7 +53,7 @@ export const Footer = () => {
                         <NavLink to="">Chính sách bảo mật</NavLink>
                         <NavLink to="">Thông tin công ty</NavLink>
                     </div>
-                    <div>
+                    <div className="sm:w-1/2 md:w-1/4">
                         <p className="font-bold text-2xl">
                             <span>CHĂM SÓC KHÁCH HÀNG</span>
                         </p>
@@ -67,11 +67,13 @@ export const Footer = () => {
     )
 }
 
+export default Footer;
+
 const Container = styled.footer`
     .footer-content {
         max-width: 1140px;
         margin: auto;
-        padding: 20px 40px;
+        padding: 100px 40px;
 
         .social {
             font-size: 26px;
@@ -92,6 +94,7 @@ const Container = styled.footer`
                 transition: all 0.3s ease-in-out;
                 display: block;
                 margin-top: 8px;
+                margin-bottom: 8px;
                 &:hover {
                     color: #e50914;
                     text-shadow: #e50914 0 0 1px;
@@ -100,4 +103,30 @@ const Container = styled.footer`
             }
         }
     }
+    @media (max-width: 768px) {
+        padding: 80px 20px;
+
+        .info {
+            flex-direction: column;
+
+            div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 60px 10px;
+
+        .info {
+            .sm\\:w-1\\/2 {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
 `
