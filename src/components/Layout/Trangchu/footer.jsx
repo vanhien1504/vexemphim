@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Footer = () => {
     return (
-        <Container className="mt-16 flex flex-col bg-gray">
+        <Container className=" flex flex-col bg-gray-400">
             <img
                 className="w-full"
                 src="https://cinestar.com.vn/catalog/view/theme/default/images/line-bg.png"
@@ -77,7 +77,7 @@ const Container = styled.footer`
 
         .social {
             font-size: 26px;
-            color: #111;
+            color: #FFFFFF ;
             display: flex;
             gap: 30px;
             i {
@@ -107,7 +107,10 @@ const Container = styled.footer`
         padding: 80px 20px;
 
         .info {
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+          }
 
             div {
                 width: 100%;

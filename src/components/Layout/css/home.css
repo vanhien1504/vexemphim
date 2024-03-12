@@ -1,10 +1,23 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .main-content {
-    margin-top: 20px; /* Adjust the margin value to your preference */
-  }
+  width: 100%;
+  max-width: 100%; /* Hoặc kích thước bạn mong muốn */
+  margin: auto;
+  padding: 0 1px; /* Điều chỉnh theo yêu cầu */
+  background: #475569 ;
+}
+
+.content {
+  margin-top: 5px;
+}
+
+/* Các định dạng cho section có thể điều chỉnh để phù hợp với trang web của bạn */
+section {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-top: 10px; /* Tăng khoảng cách phía trên */
+  margin-bottom: 10px; /* Tăng khoảng cách phía dưới */
+}
+
+

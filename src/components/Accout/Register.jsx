@@ -31,52 +31,52 @@ const Register = () => {
           onSubmit={onSubmit}
         >
           {({ isSubmitting }) => (
-            <Form className="bg-gray-300 bg-opacity-50 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <Form className="bg-gray-600 bg-opacity-50 shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <div className="mb-4">
-                <label htmlFor="username" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="username" className="block text-gray-200 font-bold mb-2">
                   Tên người dùng:
                 </label>
                 <Field
                   type="text"
                   name="username"
                   id="username"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline  bg-slate-500"
                 />
                 <ErrorMessage name="username" component="div" className="text-red-500 text-xs mt-1" />
               </div>
               <div className="mb-4">
-                <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="password" className="block text-gray-200 font-bold mb-2">
                   Mật khẩu:
                 </label>
                 <Field
                   type="password"
                   name="password"
                   id="password"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline  bg-slate-500"
                 />
                 <ErrorMessage name="password" component="div" className="text-red-500 text-xs mt-1" />
               </div>
               <div className="mb-4">
-                <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="phone" className="block text-gray-200 font-bold mb-2">
                   Số điện thoại:
                 </label>
                 <Field
                   type="text"
                   name="phone"
                   id="phone"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3  bg-slate-500 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
                 />
                 <ErrorMessage name="phone" component="div" className="text-red-500 text-xs mt-1" />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="email" className="block text-gray-200 font-bold mb-2">
                   Email:
                 </label>
                 <Field
                   type="email"
                   name="email"
                   id="email"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3  bg-slate-500 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="you@example.com"
                 />
                 <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />

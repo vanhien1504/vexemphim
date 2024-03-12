@@ -1,30 +1,28 @@
-import React from 'react'
-import Carousel from './Chuyendong/Carousel'
-import NowPlayingMovies from './procuctmovie/NowPlayingMovies'
-import SCmovie from './procuctmovie/SCmovie'
-import Sukien from '../sukien/sukien'
+import React from 'react';
+import Carousel from './Chuyendong/Carousel';
+import NowPlayingMovies from './procuctmovie/NowPlayingMovies';
+import SCmovie from './procuctmovie/SCmovie';
+import Sukien from '../sukien/sukien';
+import './css/home.css'; // Đảm bảo đã import CSS
 
 const HomeLayout = () => {
     return (
-        <div className=' bg-gray-500'>
-            
+        <div className="container mx-auto">
+            <div className="content">
+                <Carousel />
+                <section className="my-4">
+                    <NowPlayingMovies/>
 
-            <Carousel />
-            <div className='content' >
-                <section style={{ marginTop: '1px' }}>
-                    <NowPlayingMovies />
                 </section>
-                <main style={{margin:'70px'}}>
+                <section>
                     <SCmovie />
-                </main >
-                <section style={{padding:'50px'}}>
-                    <Sukien/>
                 </section>
-
+                <section>
+                    <Sukien />
+                </section>
             </div>
-            
         </div>
-    )
-}
+    );
+};
 
-export default HomeLayout
+export default HomeLayout;

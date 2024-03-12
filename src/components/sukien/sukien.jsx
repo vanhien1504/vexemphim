@@ -41,9 +41,9 @@ const Sukien = () => {
   const displayedsukien = isMobile ? sukien.slice(currentIndex, currentIndex + 1) : sukien.slice(currentIndex, currentIndex + 4);
 
   return (
-    <div className="h-screen flex flex-col bg-gray-500">
+    <div className="h-screen flex flex-col bg-gray-400">
       <div className="container mx-auto flex-grow">
-        <h2 className="text-5xl font-bold mb-3 text-center">Sự Kiện</h2>
+        <h2 className="text-5xl font-bold mb-3 text-center text-white">Sự Kiện</h2>
         <Carousel>
           <div className="flex flex-col md:flex-row relative overflow-hidden">
             {displayedsukien.map((movie, index) => (

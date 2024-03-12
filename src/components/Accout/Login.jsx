@@ -8,6 +8,9 @@ const Login = () => {
     email: Yup.string().email('Email không hợp lệ').required('Vui lòng nhập email'),
     password: Yup.string().required('Vui lòng nhập mật khẩu'),
   });
+  const ThanhVien = () => {
+
+  }
 
   // Xử lý submit form
   const onSubmit = (values) => {
@@ -34,41 +37,41 @@ const Login = () => {
         >
           {(formik) => (
             <Form
-              className="bg-gray-300 bg-opacity-80 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              className="bg-gray-600 bg-opacity-80 shadow-md rounded px-8 pt-6 pb-8 mb-4"
             >
               <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="email" className="block text-gray-200 font-bold mb-2">
                   Email:
                 </label>
                 <Field
                   type="email"
                   name="email"
                   id="email"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline  bg-slate-500"
                 />
                 <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
               </div>
               <div className="mb-4">
-                <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="password" className="block text-gray-200 font-bold mb-2">
                   Mật khẩu:
                 </label>
                 <Field
                   type="password"
                   name="password"
                   id="password"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-slate-500"
                 />
                 <ErrorMessage name="password" component="div" className="text-red-500 text-xs mt-1" />
               </div>
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                disabled={formik.isSubmitting}
+                disabled={formik.isSubmitting} 
               >
                 Đăng nhập
               </button>
-              <div className="text-gray-700 mt-4">
-                Nếu chưa có tài khoản? <a href="/dang-ki" style={{color:'blue'}}>Đăng kí ngay!</a>
+              <div className="text-gray-100 mt-4">
+                Nếu chưa có tài khoản? <a href="/dang-ki" style={{ color: 'blue' }}>Đăng kí ngay!</a>
               </div>
             </Form>
           )}

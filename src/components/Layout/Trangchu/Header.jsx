@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 100;
+      if (window.pageYOffset > scrollThreshold) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <nav className="bg-gray-800">
+    <nav className='bg-slate-600'>
       <div classname="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -159,6 +185,14 @@ const Header = () => {
           </div>
         </div>
 
+      )}
+       {showScrollButton && (
+        <button
+          className="fixed bottom-5 right-5 bg-gray-400 text-white px-4 py-2 rounded-md text-sm font-medium"
+          onClick={scrollToTop}
+        >
+            <FontAwesomeIcon icon={faArrowUp} /> 
+        </button>
       )}
     </nav>
   );

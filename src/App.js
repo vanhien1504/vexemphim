@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomeLayout from './components/Layout/HomeLayout';
 import Login from './components/Accout/Login';
@@ -9,35 +9,27 @@ import Detailrap from './Layout/Detailrap';
 import Header from './components/Layout/Trangchu/Header';
 import Footer from './components/Layout/Trangchu/footer'
 import NotFound from './pages/NotFound';
+
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <header>
-          <Header />
-        </header>
+        <Header />
+        <main>
+          <Routes>
+            <Route exact path="/" element={<HomeLayout />} />
+            <Route path="/lich" element={<Listcinema />} />
+            <Route path="/rap" element={<Detailrap />} />
 
-
-        <Routes>
-          <Route exact path="/" element={<HomeLayout />} />
-          <Route path="/lich" element={<Listcinema />} />
-          <Route path="/rap" element={<Detailrap />} />
-
-          <Route path="/login" element={<Login />} />
-          <Route path="/dang-ki" element={<RegistrationForm />} />
-          <Route path="*" element={<NotFound />} />
-
-        </Routes>
-        <footer>
-          <Footer />
-        </footer>
-
-
-
-
+            <Route path="/login" element={<Login />} />
+            <Route path="/dang-ki" element={<RegistrationForm />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;
