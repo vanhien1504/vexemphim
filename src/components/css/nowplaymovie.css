@@ -1,0 +1,187 @@
+.now-playing-movies {
+  position: relative;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movies-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+  scrollbar-width: none; /* Ẩn thanh cuộn cho Firefox */
+  -ms-overflow-style: none;  /* Ẩn thanh cuộn cho Internet Explorer và Edge */
+}
+
+.movies-scroll-container::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn cho Chrome, Safari, và Opera */
+}
+
+.movies-flex-container {
+  display: inline-flex;
+}
+
+.movie-item {
+  width: 300px; /* Hoặc bất kỳ kích thước nào bạn muốn */
+  margin-right: 16px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-details {
+  padding: 10px;
+  text-align: center;
+}
+
+.movies-container {
+  display: flex;
+  overflow-x: hidden; /* Ẩn thanh cuộn */
+  scroll-behavior: smooth;
+}
+
+.movie-item {
+  flex: 0 0 auto; /* Adjust based on the desired size of each item */
+  margin-right: 15px; /* Space between movies */
+}
+
+.now-playing-movies {
+  position: relative;
+}
+
+/* Styles for navigation buttons (prev and next) */
+.prev-btn, .next-btn {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  background-color: #475569; /* Example blue background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  padding: 10px 15px; /* Padding around the text */
+  border-radius: 50%; /* Circular buttons */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Add some shadow for depth */
+  transition: transform 0.2s ease-in-out; /* Smooth transform on hover */
+}
+
+/* Enlarge and add a slight lift to buttons on hover */
+.prev-btn:hover, .next-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.now-playing-movies:hover .prev-btn,
+.now-playing-movies:hover .next-btn {
+  display: block; /* Show on hover */
+}
+
+
+
+.movies-container {
+  display: flex;
+  overflow: hidden; /* Ẩn thanh cuộn dọc và ngang */
+  scroll-behavior: smooth;
+}
+h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sử dụng phông chữ hiện đại */
+  font-weight: 600; /* Cân nhắc giữa đậm và nhẹ */
+  color: #000; /* Màu chữ đen */
+  margin-bottom: 10px; /* Khoảng cách phía dưới cho đẹp và rõ ràng */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Tạo hiệu ứng bóng nhẹ để tăng độ rõ nét */
+  line-height: 1.4; /* Khoảng cách giữa các dòng */
+}
+
+
+.movie-actions button {
+  margin-top: 0px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.movie-actions button:last-child {
+  background-color: #28a745;
+}
+
+.movie-actions button:hover {
+  opacity: 0.8;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2, .modal-content p, .modal-content a {
+  margin-bottom: 15px;
+}
+
+.movie-poster {
+  width: 20%;
+  height: 10%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.trailer-btn {
+  background-color: #007bff; /* Màu nền của nút */
+  color: white; /* Màu chữ */
+  border: none; /* Loại bỏ viền */
+  padding: 10px 20px; /* Khoảng cách padding xung quanh nội dung */
+  border-radius: 5px; /* Bo góc cho nút */
+  font-size: 16px; /* Kích thước font */
+  text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+  cursor: pointer; /* Cursor hiển thị dạng tay khi hover */
+  display: inline-block; /* Đảm bảo liên kết hiển thị như một nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng khi thay đổi màu nền */
+}
+
+.trailer-btn:hover {
+  background-color: #0056b3; /* Màu nền khi hover */
+}

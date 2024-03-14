@@ -4,6 +4,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import '../css/carouse.css';
 const Carousel = () => {
   const [hovered, setHovered] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -12,6 +13,10 @@ const Carousel = () => {
   const handleMouseLeave = () => {
     setHovered(false);
   };
+  const handlePlayVideo = () => {
+    setShowVideo(true);
+  };
+
 
   return (
     <div
@@ -26,9 +31,19 @@ const Carousel = () => {
             <img src="/images/anhphim1.jpg" className="d-block w-100" alt="..." />
             {hovered && (
               <div className="button-overlay">
-                <button className="play-button">
-                  <FontAwesomeIcon icon={faPlay} />
-                </button>
+                  {showVideo && (
+                    <div className="video-modal">
+                      <div className="video-container">
+                        <iframe  src="https://www.youtube.com/embed/pTlqIQUkYQI?si=EcSuMIEfhG1MeBAA" ></iframe>
+                        <button className="close-video" onClick={() => setShowVideo(false)}>Close</button>
+                      </div>
+                      
+                    </div>
+                  )}<button className="play-button" onClick={handlePlayVideo}>
+                    <FontAwesomeIcon icon={faPlay} />
+                  </button>
+
+
               </div>
             )}
           </div>
@@ -38,9 +53,16 @@ const Carousel = () => {
             <img src="/images/anhphim2.jpg" className="d-block w-100" alt="..." />
             {hovered && (
               <div className="button-overlay">
-                <button className="play-button">
-                  <FontAwesomeIcon icon={faPlay} />
-                </button>
+                   {showVideo && (
+                    <div className="video-modal">
+                      <div className="video-container">
+                      <iframe  src="https://www.youtube.com/embed/8jraVtX821Q" ></iframe>                   
+                           <button className="close-video" onClick={() => setShowVideo(false)}>close</button>
+                      </div>
+                    </div>
+                  )}<button className="play-button" onClick={handlePlayVideo}>
+                    <FontAwesomeIcon icon={faPlay} />
+                  </button>
               </div>
             )}
           </div>
@@ -50,9 +72,16 @@ const Carousel = () => {
             <img src="/images/anhphim3.jpg" className="d-block w-100" alt="..." />
             {hovered && (
               <div className="button-overlay">
-                <button className="play-button">
-                  <FontAwesomeIcon icon={faPlay} />
-                </button>
+                   {showVideo && (
+                    <div className="video-modal">
+                      <div className="video-container">
+                      <iframe src="https://www.youtube.com/embed/32RAq6JzY-w" ></iframe>  
+                                            <button className="close-video" onClick={() => setShowVideo(false)}>Close</button>
+                      </div>
+                    </div>
+                  )}<button className="play-button" onClick={handlePlayVideo}>
+                    <FontAwesomeIcon icon={faPlay} />
+                  </button>
               </div>
             )}
           </div>

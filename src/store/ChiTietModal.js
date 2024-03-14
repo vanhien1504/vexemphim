@@ -1,18 +1,18 @@
 import React from 'react';
-
-const ChiTietModal = ({ show, children, onClose }) => {
-    if (!show) {
-        return null;
-    }
+import './css/chitietmodal.css'
+const ChiTietModal = ({ show, onClose, children }) => {
+    // Lớp CSS bổ sung dựa trên trạng thái hiển thị của modal
+    const modalClass = show ? "modal-content open" : "modal-content";
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-content">
-                <button className="modal-close" onClick={onClose}>&times;</button>
+        <div className="modal-backdrop" style={{ display: show ? "flex" : "none" }}>
+            <div className={modalClass}>
+                <button onClick={onClose} className='close-btn' btn-primay-white>X</button>
                 {children}
             </div>
         </div>
     );
 };
+
 
 export default ChiTietModal;

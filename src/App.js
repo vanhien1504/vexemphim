@@ -9,7 +9,7 @@ import Detailrap from './Layout/Detailrap';
 import Header from './components/Layout/Trangchu/Header';
 import Footer from './components/Layout/Trangchu/footer'
 import NotFound from './pages/NotFound';
-
+import BookingPage from './components/booking/BookingPage ';
 const App = () => {
   return (
     <Router>
@@ -23,6 +23,7 @@ const App = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/dang-ki" element={<RegistrationForm />} />
+            <Route path="/booking/:movieId" element={<BookingPage />} /> 
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

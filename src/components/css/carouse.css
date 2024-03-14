@@ -1,0 +1,101 @@
+.image-with-button {
+  position: relative;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  transform: translate(-100%, -80%);
+  text-align: center;
+}
+
+.button-overlay button {
+  margin: 5px;
+}
+
+.image-with-button {
+  position: relative;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-button i {
+  font-size: 24px;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  /* Canh giữa theo chiều ngang */
+  align-items: center;
+  /* Canh giữa theo chiều dọc */
+  z-index: 1050;
+}
+
+.video-container {
+  position: relative;
+  display: flex;
+  /* Thêm này để đảm bảo flexbox cho container */
+  justify-content: center;
+  /* Canh giữa video theo chiều ngang */
+  align-items: center;
+  /* Canh giữa video theo chiều dọc */
+}
+
+.video-container iframe {
+  width: 1200px;
+  /* Chiều rộng video sẽ tự động điều chỉnh theo container */
+  height: 650px;
+  /* Tăng chiều cao của video */
+  align-items: center;
+}
+
+.close-video {
+  position: absolute;
+  top: -40px;
+  /* Điều chỉnh vị trí của nút đóng nếu cần */
+  right: 20px;
+  /* Điều chỉnh vị trí của nút đóng nếu cần */
+  border: none;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px 10px;
+}
