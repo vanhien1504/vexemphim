@@ -1,22 +1,32 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import { useState } from 'react';
+import axios from 'axios';
 const Login = () => {
+  const [errorMessage, setErrorMessage] = useState('');
   // Định nghĩa schema kiểm tra hợp lệ bằng Yup
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Email không hợp lệ').required('Vui lòng nhập email'),
     password: Yup.string().required('Vui lòng nhập mật khẩu'),
   });
-  const ThanhVien = () => {
-
-  }
-
-  // Xử lý submit form
-  const onSubmit = (values) => {
-    console.log(values);
-    // Thực hiện các bước xác thực hoặc gửi dữ liệu đăng nhập lên server
+  const onSubmit = async (values) => {
+    try {
+      const response = await axios.post('http://localhost:4000/users/users', values);
+      console.log(response.data);
+      // Xử lý kết quả đăng nhập thành công
+    } catch (error) {
+      console.error(error);
+      // Xử lý lỗi đăng nhập
+      if (error.response) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage('Đã có lỗi xảy ra. Vui lòng thử lại sau.');
+      }
+    }
   };
+
+
 
   return (
     <div className="relative">

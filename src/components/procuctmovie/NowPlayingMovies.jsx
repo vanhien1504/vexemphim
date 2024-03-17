@@ -77,7 +77,7 @@ const NowPlayingMovies = () => {
                     <img src={selectedMovie.Poster} alt={`Poster của phim ${selectedMovie.TenPhim}`} className="movie-poster" />
                     <div>
                         <p>Thể loại: {selectedMovie.TheLoaiPhim}</p>
-                        <p>Ngày phát hành: {new Date(selectedMovie.NgayPhatHanh).toLocaleDateString()}</p>
+                        <p>Ngày phát hành: {new Date(selectedMovie.NgayKhoiChieu).toLocaleDateString()}</p>
                         <p>Thời lượng: {selectedMovie.ThoiLuongPhim}</p>
                         <p>Định dạng: {selectedMovie.DinhDangPhim}</p>
                         <p>Ngôn ngữ: {selectedMovie.NgonNgu}</p>

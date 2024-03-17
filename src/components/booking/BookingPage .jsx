@@ -1,16 +1,18 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
+import '../css/booking.css';
 
 const BookingPage = () => {
-  const { movieId } = useParams(); 
+  const navigate = useNavigate ();
+  const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
   const [showtimes, setShowtimes] = useState([]);
-  const [selectedShowtime, setSelectedShowtime] = useState(null);
+  const [selectedShowtime, setSelectedShowtime] = useState('');
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      // Giả sử bạn cũng có API để lấy thông tin chi tiết phim
       const response = await axios.get(`http://localhost:4000/movie/phim/${movieId}`);
       setMovieDetails(response.data);
     };
@@ -24,28 +26,43 @@ const BookingPage = () => {
     fetchShowtimes();
   }, [movieId]);
 
-  const handleShowtimeChange = (e) => {
-    setSelectedShowtime(e.target.value);
-  };
-
-  const handleBookTicket = () => {
-    console.log("Đặt vé cho suất chiếu:", selectedShowtime);
-    // Thêm logic để đặt vé ở đây...
-  };
-
   return (
-    <div>
-      <h2>Đặt Vé: {movieDetails.TenPhim}</h2>
-      <div>Chọn Suất Chiếu:</div>
-      <select value={selectedShowtime} onChange={handleShowtimeChange}>
-        <option value="">Vui lòng chọn suất chiếu</option>
-        {showtimes.map(showtime => (
-          <option key={showtime.id_sc} value={showtime.id_sc}>
-            {new Date(showtime.start_time).toLocaleString()} - Rạp {showtime.id_rap}
-          </option>
-        ))}
-      </select>
-      <button onClick={handleBookTicket} disabled={!selectedShowtime}>Mua Vé Ngay</button>
+    <div className="booking-container">
+      <h1>{movieDetails.title}</h1>
+      <div className="calendar-container">
+      </div>
+      <div className="showtime-container">
+        <h2>Chọn Suất Chiếu:</h2>
+        <img src={movieDetails.Poster} alt="Movie Poster" className="movie-image" style={{width:'40%'}}/>
+        <h2 className="movie-title">{movieDetails.TenPhim}</h2>
+        {showtimes.map((showtime) => {
+          const startTime = new Date(showtime.start_time);
+          return (
+            <div
+              key={showtime.id_sc}
+              className={`showtime-item ${selectedShowtime === showtime.id_sc ? 'active' : ''}`}
+              onClick={() => setSelectedShowtime(showtime.id_sc)}
+            >
+              <div className="showtime-details">
+              <button
+                  className="showtime-button"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent event from bubbling to the parent div
+                    navigate(`/chon-ghe/${showtime.id_sc}`);
+                  }}
+                >
+                  Giờ chiếu: {startTime.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                </button>
+                <span>Ngày chiếu: {startTime.toLocaleDateString('vi-VN')}</span>
+
+                <span>Tên rạp: {showtime.TenRap}</span>
+                <span>Địa chỉ: {showtime.DiaChi}</span>
+              </div>
+            </div>
+          );
+        })}
+        
+      </div>
     </div>
   );
 };

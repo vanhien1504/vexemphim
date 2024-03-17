@@ -10,6 +10,7 @@ import Header from './components/Layout/Trangchu/Header';
 import Footer from './components/Layout/Trangchu/footer'
 import NotFound from './pages/NotFound';
 import BookingPage from './components/booking/BookingPage ';
+import SeatSelectionPage from './components/booking/SeatSelectionPage ';
 const App = () => {
   return (
     <Router>
@@ -24,6 +25,8 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/dang-ki" element={<RegistrationForm />} />
             <Route path="/booking/:movieId" element={<BookingPage />} /> 
+            <Route path="/chon-ghe/:movieId" element={<SeatSelectionPage />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
@@ -34,3 +37,4 @@ const App = () => {
 };
 
 export default App;
+

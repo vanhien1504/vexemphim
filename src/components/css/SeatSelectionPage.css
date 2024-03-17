@@ -1,0 +1,118 @@
+/* SeatSelectionPage.css */
+
+.seat-booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.seats-container {
+  margin-right: 20px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.seat-row-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.seat {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seat:hover:not(.booked) {
+  background-color: #f0f0f0;
+}
+
+.booked {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+.available {
+  background-color: #fff;
+}
+
+.selected {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.seat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seat-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.remove-seat {
+  cursor: pointer;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.total {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.pay-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .seat-booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
